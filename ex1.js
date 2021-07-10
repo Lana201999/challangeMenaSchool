@@ -10,15 +10,11 @@ exp
 
 function reverseNestedArray(array) {
     //TODO
-    var newArr = array.reverse();;
+    var newArr = array.reverse();
     for (var i = 0; i < newArr.length; i++) {
         if (typeof(newArr[i]) === "object")
-
-            newArr[i] = newArr[i].reverse();
+            reverseNestedArray(newArr[i]);
     }
-
     return newArr;
 }
-
-
 module.exports = reverseNestedArray;
