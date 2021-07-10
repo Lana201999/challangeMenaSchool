@@ -10,6 +10,14 @@ exp
 
 function reverseNestedArray(array) {
     //TODO
+    var newArr = array.reverse();;
+    for (var i = 0; i < newArr.length; i++) {
+        if (typeof(newArr[i]) === "object")
+
+            newArr[i] = newArr[i].reverse();
+    }
+
+    return newArr;
 }
 
 
