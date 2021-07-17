@@ -7,3 +7,21 @@ contains(array,0)=> return true
 contains(array,-1)=> return false 
 
 */
+
+function contains(array, num) {
+    for (var i = 0; i < array.length; i++) {
+        if (typeof array[i] === "object") {
+            contains(array[i], num);
+        } else if (array[i] === num) {
+            j = true;
+            break;
+        } else j = false;
+    }
+    return j;
+}
+
+function contains(array, num) {
+    var newa = array.flat();
+    var finds = newa.includes(num);
+    return finds;
+}
